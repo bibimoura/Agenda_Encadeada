@@ -1,29 +1,33 @@
 #ifndef TCONTATO_H
 #define TCONTATO_H
 
+//TAD TContato;
+
 typedef struct {
-    char nome[50];
-    char telefone[50];
+    char nome[128];
+    char telefone[11];
 }TContato;
 
 /**
- * Faz a leitura de um contato via uma linha de string
+ * Faz a leitura dos dados.
+ * @return TContato;
  */
-TContato UI_ler_contato();
+TContato TContato_read_ui();
 /**
- * Faz a leitura de um contato via uma linha de string
- * @param
+ * Faz a leitura dos dados de um contato via uma linha de string
+ * @param char* linha de str no formato csv
+ * @return TContato;
  */
-TContato ler_contato_da_str(char*);
+TContato TContato_read_from_str_csv(char*);
 /**
  * Imprime um contato usando a saída padrão.
  * @param TContato;
  */
-void Tcontato_print(TContato);
+void TContato_print(TContato);
 /**
- * 
- * @param
+ * Imprime um contato no formato csv na string passada.
+ * @param TContato;
  */
-void Tcontato_print_csv(TContato, char*);
+void TContato_print_csv(TContato, char*);
 
 #endif
